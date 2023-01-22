@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ContainerForm, Input, Button, Title } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'components/redux/ContactsSlice';
+import { addContact } from 'redux/ContactsSlice';
 
 export const Form = () => {
   const [name, setContactName] = useState('');
@@ -70,6 +70,7 @@ export const Form = () => {
         />
 
         <Button type="submit">Add contact</Button>
+        <img src="https://i.gifer.com/8LdV.gif" alt="gomer" />
       </ContainerForm>
     </>
   );

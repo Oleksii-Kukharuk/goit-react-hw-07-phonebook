@@ -18,7 +18,9 @@ const contactInitialState = [
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
-    contacts: contactInitialState,
+    items: contactInitialState,
+    isLoading: false,
+    error: null,
   },
   reducers: {
     addContact: {

@@ -11,6 +11,7 @@ import {
 import { filterReducer } from './FilterSlice';
 
 import { contReducer } from './ContactsSlice';
+// import { contactsReducer } from './contacts/contactReducers';
 
 export const store = configureStore({
   reducer: {
