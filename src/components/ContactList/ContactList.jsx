@@ -1,37 +1,42 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React from 'react';
+import { useSelector } from 'react-redux';
+import * as React from 'react';
+import { useGetContactsQuery } from 'redux/ContactsSlice';
 import { ButtonDelete, Title, ListItem } from './ContactList.syled';
-import { deleteContact } from 'redux/ContactsSlice';
+// import { deleteContact } from 'redux/ContactsSlice';
 
 export const ContactList = () => {
-  const dispatch = useDispatch();
+  const { data, error, isLoading } = useGetContactsQuery();
+  // const dispatch = useDispatch();
 
-  const contacts = useSelector(state => state.contacts.contacts);
-  const filterQuery = useSelector(state => state.filter);
+  console.log(data, error, isLoading);
 
-  const filteredContacts = () => {
-    const normalizedFilter = filterQuery.toLowerCase();
-    const filtred = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-    return filtred;
-  };
+  // const contacts = useSelector(state => state.contacts.contacts);
+  // const filterQuery = useSelector(state => state.filter);
+
+  // const filteredContacts = () => {
+  //   const normalizedFilter = filterQuery.toLowerCase();
+  //   const filtred = contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalizedFilter)
+  //   );
+  //   return filtred;
+  // };
 
   return (
     <div>
       <Title>Contacts</Title>
       <ul>
-        {filteredContacts().map(({ id, name, number }) => (
-          <ListItem key={id}>
-            {name}: {number}
-            <ButtonDelete
-              onClick={() => dispatch(deleteContact(id))}
-              type="button"
-            >
-              Delete
-            </ButtonDelete>
-          </ListItem>
-        ))}
+        {data &&
+          data.map(({ id, name, phone }) => (
+            <ListItem key={id}>
+              {name}: {phone}
+              <ButtonDelete
+                // onClick={() => dispatch(deleteContact(id))}
+                type="button"
+              >
+                Delete
+              </ButtonDelete>
+            </ListItem>
+          ))}
       </ul>
     </div>
   );
