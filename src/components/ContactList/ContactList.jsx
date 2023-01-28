@@ -8,7 +8,7 @@ import { ButtonDelete, Title, ListItem } from './ContactList.syled';
 // import { deleteContact } from 'redux/ContactsSlice';
 
 export const ContactList = () => {
-  const { data, error, isLoading } = useGetContactsQuery();
+  const { data } = useGetContactsQuery();
   const [deleteContact, { isLoading: isDeleting }] = useDeletContactMutation();
 
   // const contacts = useSelector(
