@@ -32,6 +32,12 @@ export const ButtonDelete = styled.button`
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+  &:disabled {
+    background-color: black;
+
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+  }
 `;
 
 export const ListItem = styled.li`

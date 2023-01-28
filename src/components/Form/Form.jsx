@@ -45,11 +45,8 @@ export const Form = () => {
   };
 
   return (
-    <>
-      <Title>
-        Phonebook
-        <img src="https://i.gifer.com/8LdV.gif" alt="gomer" />
-      </Title>
+    <div>
+      <Title>Phonebook</Title>
       <ContainerForm onSubmit={handleSubmitt}>
         <label htmlFor={nameInputId}>Name </label>
         <Input
@@ -74,9 +71,9 @@ export const Form = () => {
           required
           id={numberInputId}
         />
-
+        <img src="https://i.gifer.com/8LdV.gif" alt="gomer" />
         <Button type="submit">Add contact</Button>
       </ContainerForm>
-    </>
+    </div>
   );
 };

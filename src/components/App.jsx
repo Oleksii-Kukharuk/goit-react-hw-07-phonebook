@@ -6,16 +6,20 @@ import { Form } from './Form/Form';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        display: `flex`,
-        alignItems: `center`,
-        flex: `wrap`,
-      }}
-    >
-      <Form />
-      <Filter />
-      <ContactList />
-    </div>
+    <>
+      <div
+        style={{
+          display: `flex`,
+          alignItems: `start`,
+          flex: `wrap`,
+        }}
+      >
+        <Form />
+        <div>
+          <Filter />
+          <ContactList />
+        </div>
+      </div>
+    </>
   );
 };
