@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  useDeletContactMutation,
-  useGetContactsQuery,
-} from 'redux/ContactsSlice';
-import { ButtonDelete, Title, ListItem } from './ContactList.syled';
+import { useGetContactsQuery } from 'redux/ContactsSlice';
+import { Contact } from './Contact';
+import { Title } from './ContactList.syled';
 // import { deleteContact } from 'redux/ContactsSlice';
 
 export const ContactList = () => {
   const { data } = useGetContactsQuery();
-  const [deleteContact, { isLoading: isDeleting }] = useDeletContactMutation();
 
   // const contacts = useSelector(
   //   state => state.contactsApi.queries.getContacts.data
@@ -30,17 +27,8 @@ export const ContactList = () => {
       <Title>Contacts</Title>
       <ul>
         {data &&
-          filteredContacts().map(({ id, name, phone }) => (
-            <ListItem key={id}>
-              {name}: {phone}
-              <ButtonDelete
-                disabled={isDeleting}
-                onClick={() => deleteContact(id)}
-                type="button"
-              >
-                {isDeleting ? 'Deleting...' : 'Delete'}
-              </ButtonDelete>
-            </ListItem>
+          filteredContacts().map(data => (
+            <Contact key={data.id} {...data}></Contact>
           ))}
       </ul>
     </div>
