@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import * as React from 'react';
 import { useGetContactsQuery } from 'redux/ContactsSlice';
 import { ButtonDelete, Title, ListItem } from './ContactList.syled';

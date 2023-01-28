@@ -43,7 +43,10 @@ export const Form = () => {
 
   return (
     <>
-      <Title>Phonebook</Title>
+      <Title>
+        Phonebook
+        <img src="https://i.gifer.com/8LdV.gif" alt="gomer" />
+      </Title>
       <ContainerForm onSubmit={handleSubmitt}>
         <label htmlFor={nameInputId}>Name </label>
         <Input
@@ -70,7 +73,6 @@ export const Form = () => {
         />
 
         <Button type="submit">Add contact</Button>
-        <img src="https://i.gifer.com/8LdV.gif" alt="gomer" />
       </ContainerForm>
     </>
   );

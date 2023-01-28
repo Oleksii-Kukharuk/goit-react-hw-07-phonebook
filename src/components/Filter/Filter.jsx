@@ -15,7 +15,7 @@ export const Filter = () => {
   };
 
   return (
-    <>
+    <div>
       <FilterP>Find contacts by name</FilterP>
       <label htmlFor={filterId}></label>
       <FilterInput
@@ -24,6 +24,6 @@ export const Filter = () => {
         value={filtredText}
         onChange={onChangeFilter}
       ></FilterInput>
-    </>
+    </div>
   );
 };

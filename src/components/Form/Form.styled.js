@@ -47,6 +47,7 @@ export const Button = styled.button`
 `;
 
 export const Title = styled.h2`
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-left: 20px;
 `;
